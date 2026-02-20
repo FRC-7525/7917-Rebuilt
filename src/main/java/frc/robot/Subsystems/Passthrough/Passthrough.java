@@ -1,5 +1,3 @@
 package frc.robot.Subsystems.Passthrough;
 
-public class Passthrough {
-    
-}
+public class Passthrough {}

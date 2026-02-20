@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import frc.robot.Subsystems.Drive.Drive;
 
 /**
  * The methods in this class are called automatically corresponding to each mode, as described in
@@ -12,42 +13,49 @@ import edu.wpi.first.wpilibj.TimedRobot;
  * this project, you must also update the Main.java file in the project.
  */
 public class Robot extends TimedRobot {
-  /**
-   * This function is run when the robot is first started up and should be used for any
-   * initialization code.
-   */
-  public Robot() {}
 
-  @Override
-  public void robotPeriodic() {}
+	/**
+	 * This function is run when the robot is first started up and should be used for any
+	 * initialization code.
+	 */
+	Drive drive;
 
-  @Override
-  public void autonomousInit() {}
+	public Robot() {
+		drive = Drive.getInstance();
+	}
 
-  @Override
-  public void autonomousPeriodic() {}
+	@Override
+	public void robotPeriodic() {
+		drive.periodic();
+	}
 
-  @Override
-  public void teleopInit() {}
+	@Override
+	public void autonomousInit() {}
 
-  @Override
-  public void teleopPeriodic() {}
+	@Override
+	public void autonomousPeriodic() {}
 
-  @Override
-  public void disabledInit() {}
+	@Override
+	public void teleopInit() {}
 
-  @Override
-  public void disabledPeriodic() {}
+	@Override
+	public void teleopPeriodic() {}
 
-  @Override
-  public void testInit() {}
+	@Override
+	public void disabledInit() {}
 
-  @Override
-  public void testPeriodic() {}
+	@Override
+	public void disabledPeriodic() {}
 
-  @Override
-  public void simulationInit() {}
+	@Override
+	public void testInit() {}
 
-  @Override
-  public void simulationPeriodic() {}
+	@Override
+	public void testPeriodic() {}
+
+	@Override
+	public void simulationInit() {}
+
+	@Override
+	public void simulationPeriodic() {}
 }
