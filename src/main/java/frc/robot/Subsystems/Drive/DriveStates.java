@@ -1,17 +1,15 @@
 package frc.robot.Subsystems.Drive;
 
-
-
 public enum DriveStates {
-    Manual("Manual");
+	Manual("Manual");
 
+	public String stateString;
 
-    public String stateString;
-    DriveStates(String stateString) {
-        this.stateString = stateString;
-    }
+	DriveStates(String stateString) {
+		this.stateString = stateString;
+	}
 
-    public String getStateString() {
-        return stateString;
-    }
+	public String getStateString() {
+		return stateString;
+	}
 }

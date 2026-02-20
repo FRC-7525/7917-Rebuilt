@@ -13,20 +13,21 @@ import frc.robot.Subsystems.Drive.Drive;
  * this project, you must also update the Main.java file in the project.
  */
 public class Robot extends TimedRobot {
-  /**
-   * This function is run when the robot is first started up and should be used for any
-   * initialization code.
-   */
-  Drive drive;
 
-  public Robot() {
-    drive = Drive.getInstance();
-  }
+	/**
+	 * This function is run when the robot is first started up and should be used for any
+	 * initialization code.
+	 */
+	Drive drive;
 
-  @Override
-  public void robotPeriodic() {
-    drive.periodic();
-  }
+	public Robot() {
+		drive = Drive.getInstance();
+	}
+
+	@Override
+	public void robotPeriodic() {
+		drive.periodic();
+	}
 
 	@Override
 	public void autonomousInit() {}
