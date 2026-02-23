@@ -1,29 +1,29 @@
-
-
 package frc.robot.Subsystems.Intake;
 
+import static frc.robot.Subsystems.Intake.IntakeConstants.*;
 
 import edu.wpi.first.units.measure.Angle;
-
-
+import edu.wpi.first.units.measure.AngularVelocity;
 
 public enum IntakeStates {
-    INTAKING( 2,0.5),
-    IDLE(1, 1),
-    PASSING(2, 5);
+	IDLE(IDLE_SPEED, IDLE_ANGLE),
+	INTAKING(INTAKING_SPEED, INTAKING_ANGLE),
+	PASSING(PASSING_SPEED, PASSING_ANGLE);
 
-    public final double speed;
-    public final Angle position;
-    void Intakestates(double speed, Angle position) {
-        this.speed = speed;
-        this.position = position;
-    }
+	private String stateString;
+	private AngularVelocity wheelSpeed;
+	private Angle position;
 
-    public double getSpeed() {
-        return speed;
-    }
+    IntakeStates(AngularVelocity wheelSpeed, Angle position) {
+		this.wheelSpeed = wheelSpeed;
+		this.position = position;
+	}
 
-    public Angle getPosition() {
-        return position;
-    }
-} 
+	public AngularVelocity getStateString() {
+		return wheelSpeed;
+	}
+
+	public Angle getShooterRPS() {
+		return position;
+	}
+}
