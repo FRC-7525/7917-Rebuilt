@@ -1,40 +1,34 @@
 package frc.robot.Subsystems.Intake;
 
+import static edu.wpi.first.units.Units.Degree;
+import static edu.wpi.first.units.Units.RotationsPerSecond;
+
+import java.util.function.Supplier;
+
+import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.units.measure.Angle;
+import edu.wpi.first.units.measure.AngularVelocity;
+import frc.robot.GlobalConstants;
+
+import static frc.robot.GlobalConstants.*;
 
 public final class IntakeConstants {
 
-	public static final double IDLE_RPS = 0;
-	public static final double FIXED_SHOOT_RPS = 30;
-	public static final int LEFT_MOTOR_ID = 15;
-	public static final int RIGHT_MOTOR_ID = 14;
-	public static final double LONG_PASS_RPS = 100;
+    public static final AngularVelocity IDLE_SPEED = RotationsPerSecond.of(0);
+    public static final Angle IDLE_ANGLE = Degree.of(0);
+    public static final AngularVelocity INTAKING_SPEED = RotationsPerSecond.of(30);
+    public static final Angle INTAKING_ANGLE = Degree.of(90);
 
-	public static final double MOTOR_RIGHT_PROPORTION = 0.0002;
-	public static final double MOTOR_RIGHT_INTEGRAL = 0;
-	public static final double MOTOR_RIGHT_DERIVATIVE = 0;
+    public static final int ROLLER_MOTOR_ID = 1;
+    public static final int PIVOT_MOTOR_ID = 2;
+    public static final int kdis = 0;
 
-	public static final double kS = 0;
-	public static final double kV = 0;
-	public static final double kA = 0;
 
-	// for Simulation
-	public static final int leftSimMotor = 1;
-	public static final int rightSimMotor = 1;
-	public static final double JKgMetersSquared = 0.001;
-	public static final double gearing = 0.001;
+	public static final Supplier<PIDController> WHEEL_PID = () ->
+		switch (GlobalConstants.ROBOT_MODE) {
+			case REAL -> new PIDController(1, 0, 0);
+			case SIM -> new PIDController(1, 0, 0.01);
+			default -> new PIDController(20, 1, 0);
+		};
 
-	public static final int busVoltage = 12;
-	public static final double bigWheelUpdate = 0.02;
-
-	public static final double kADefaultValue = 0.02;
-	public static final double kVDefaultValue = 0.02;
-	public static final double kDefaultValue = 0.02;
-
-	public static final double kADefaultValueSim = 0;
-	public static final double kVDefaultValueSim = 0.001;
-	public static final double kSDefaultValueSim = 0.1;
-
-	public static final int RPStoRPMConversionFactor = 60;
-	public static final int IDLESpeedOrVoltage = 0;
-	public static final int BigWheelVoltageInitalCalcFactor = 12;
 }

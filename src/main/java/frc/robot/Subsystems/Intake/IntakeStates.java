@@ -7,10 +7,9 @@ import edu.wpi.first.units.measure.AngularVelocity;
 
 public enum IntakeStates {
 	IDLE(IDLE_SPEED, IDLE_ANGLE),
-	INTAKING(INTAKING_SPEED, INTAKING_ANGLE),
-	PASSING(PASSING_SPEED, PASSING_ANGLE);
+	INTAKING(INTAKING_SPEED, INTAKING_ANGLE);
 
-	private String stateString;
+
 	private AngularVelocity wheelSpeed;
 	private Angle position;
 
@@ -19,11 +18,11 @@ public enum IntakeStates {
 		this.position = position;
 	}
 
-	public AngularVelocity getStateString() {
+	public AngularVelocity getWheelSpeed() {
 		return wheelSpeed;
 	}
 
-	public Angle getShooterRPS() {
+	public Angle getAngle() {
 		return position;
 	}
 }
