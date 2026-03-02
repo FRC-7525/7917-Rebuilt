@@ -1,4 +1,5 @@
 package frc.robot.CI;
+
 import edu.wpi.first.hal.DriverStationJNI;
 import edu.wpi.first.hal.HAL;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -10,12 +11,8 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CrashCheck extends IterativeRobotBase {
 
 	private static IterativeRobotBase robot;
-	private final AtomicReference<CrashCheckStates> currentState = new AtomicReference<>(
-		CrashCheckStates.DISABLED
-	);
-	private final AtomicReference<CrashCheckStates> lastState = new AtomicReference<>(
-		CrashCheckStates.TEST
-	);
+	private final AtomicReference<CrashCheckStates> currentState = new AtomicReference<>(CrashCheckStates.DISABLED);
+	private final AtomicReference<CrashCheckStates> lastState = new AtomicReference<>(CrashCheckStates.TEST);
 
 	private long startTime = 0;
 	// Holy I hate this notation so much (Required as a flag)
@@ -30,7 +27,7 @@ public class CrashCheck extends IterativeRobotBase {
 				getRobot().disabledPeriodic();
 			},
 			() -> {
-			    getRobot().disabledInit();
+				getRobot().disabledInit();
 			},
 			() -> {
 				getRobot().disabledExit();
@@ -106,7 +103,7 @@ public class CrashCheck extends IterativeRobotBase {
 	}
 
 	public CrashCheck(IterativeRobotBase robot) {
-		super(0.02); 
+		super(0.02);
 		CrashCheck.robot = robot;
 		HAL.initialize(500, 0);
 
