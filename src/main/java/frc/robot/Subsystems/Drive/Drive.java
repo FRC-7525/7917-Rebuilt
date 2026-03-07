@@ -57,7 +57,6 @@ public class Drive {
 			swerveDrive.drive(swerveInputs.get());
 		}
 
-		
 		SmartDashboard.putData(robot);
 	}
 }
