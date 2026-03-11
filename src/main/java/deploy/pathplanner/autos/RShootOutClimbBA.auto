@@ -1,0 +1,67 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "wind-up flywheel"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RStartShoot"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "shooting"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 5.0
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RShootOut"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "ROutShoot"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "shooting"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 5.0
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RShootClimb"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": null,
+  "choreoAuto": false
+}
