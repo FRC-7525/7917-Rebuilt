@@ -1,0 +1,43 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "wind-up flywheel"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "MStartShootRA"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "shooting"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "MoveOutRA"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "climb"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": null,
+  "choreoAuto": false
+}
