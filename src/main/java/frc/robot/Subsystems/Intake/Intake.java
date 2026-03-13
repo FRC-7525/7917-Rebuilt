@@ -39,7 +39,6 @@ public class Intake {
 		return instance;
 	}
 
-
 	public void periodic() {
 		if (controller.getAButtonPressed()) {
 			intakeOn = !intakeOn;
@@ -54,14 +53,11 @@ public class Intake {
 		io.setWheelSpeed(currentState.getWheelSpeed());
 		SmartDashboard.putNumber("Intake/Pivot Angle", io.getIntakeAngle());
 		logData();
-
 	}
+
 	public void setState(IntakeStates newState) {
 		currentState = newState;
 	}
-
-
-
 
 	private void logData() {
 		SmartDashboard.putString("Intake/CurrentState", currentState.getStateString());

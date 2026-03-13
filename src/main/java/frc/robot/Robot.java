@@ -36,7 +36,6 @@ public class Robot extends TimedRobot {
 		// drive.periodic();
 		// autoAlign.periodic();
 		intake.periodic();
-		
 	}
 
 	@Override

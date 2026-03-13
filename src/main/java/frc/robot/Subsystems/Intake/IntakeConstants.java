@@ -37,14 +37,14 @@ public class IntakeConstants {
 
 	public static final Supplier<PIDController> WHEEL_CONTROLLER = () ->
 		switch (GlobalConstants.ROBOT_MODE) {
-			case REAL -> new PIDController( 0.1, 0, 0);
-			case SIM -> new PIDController( 0.1, 0, 0);
-			case TESTING -> new PIDController( 0.1, 0, 0);
+			case REAL -> new PIDController(0.1, 0, 0);
+			case SIM -> new PIDController(0.1, 0, 0);
+			case TESTING -> new PIDController(0.1, 0, 0);
 		};
 
 	public static final Supplier<PIDController> PIVOT_CONTROLLER = () ->
 		switch (GlobalConstants.ROBOT_MODE) {
-			case REAL -> new PIDController( 0.045, 0, 0);
+			case REAL -> new PIDController(0.045, 0, 0);
 			case SIM -> new PIDController(0.1, 0, 0);
 			case TESTING -> new PIDController(0.1, 0, 0);
 		};

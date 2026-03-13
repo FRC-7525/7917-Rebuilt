@@ -69,6 +69,4 @@ public class IntakeIOSim implements IntakeIO { // blah blah blah sim here
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
-
 }
