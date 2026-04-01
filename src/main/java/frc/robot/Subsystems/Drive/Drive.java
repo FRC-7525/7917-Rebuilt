@@ -54,7 +54,7 @@ public class Drive extends SubsystemBase {
 		invert = 1;
 		swerveDrive.setMotorIdleMode(false);
 		SwerveDriveTelemetry.verbosity = TelemetryVerbosity.HIGH;
-		swerveInputs = SwerveInputStream.of(swerveDrive, () -> invert * -DRIVER_CONTROLLER.getLeftY(), () -> invert * -DRIVER_CONTROLLER.getLeftX()).withControllerRotationAxis(() -> -DRIVER_CONTROLLER.getRightX()).allianceRelativeControl(true).driveToPoseEnabled(false);
+		swerveInputs = SwerveInputStream.of(swerveDrive, () -> invert * DRIVER_CONTROLLER.getLeftY(), () -> invert * DRIVER_CONTROLLER.getLeftX()).withControllerRotationAxis(() -> DRIVER_CONTROLLER.getRightX()).allianceRelativeControl(true).driveToPoseEnabled(false);
 	}
 
 	public void periodic() {
