@@ -8,6 +8,7 @@ public enum AutoAlignStates {
 	toOutpost(new PosePair(new Pose2d(15.963, 7.376, new Rotation2d(Math.toRadians(0))), new Pose2d(0.609, 0.630, new Rotation2d(Math.toRadians(180)))), "toOutpost"),
 	toShootRangeHub(new PosePair(new Pose2d(13.101, 4.030, new Rotation2d(Math.toRadians(180))), new Pose2d(3.428, 4.019, new Rotation2d(Math.toRadians(0)))), "toShootRangeHub"),
 	toTower(new PosePair(new Pose2d(14.887, 3.320, new Rotation2d(Math.toRadians(0))), new Pose2d(1.664, 2.760, new Rotation2d(Math.toRadians(180)))), "toTower"),
+	
 	toDepot(new PosePair(new Pose2d(15.231, 2.093, new Rotation2d(Math.toRadians(0))), new Pose2d(1.277, 5.912, new Rotation2d(Math.toRadians(180)))), "toDepot");
 
 	private PosePair location;

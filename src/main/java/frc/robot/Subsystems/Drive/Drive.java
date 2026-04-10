@@ -2,9 +2,12 @@ package frc.robot.Subsystems.Drive;
 
 import static frc.robot.Subsystems.Drive.DriveConstants.*;
 
+import edu.wpi.first.math.Matrix;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
+import edu.wpi.first.math.numbers.N1;
+import edu.wpi.first.math.numbers.N3;
 import edu.wpi.first.wpilibj.Filesystem;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.Field2d;
@@ -97,6 +100,9 @@ public class Drive extends SubsystemBase {
 
 	public Pose2d getPose() {
 		return swerveDrive.getPose();
+	}
+	public void addVisionMeasurement (Pose2d visionPose, double timestamp, Matrix<N3, N1> visionMeasurementStdDevs) {
+			drivetrain.addVisionMeasurement(visionPose, timestamp, visionMeasurementStdDevs);
 	}
 
 	public void setPose(Pose2d pose) {
