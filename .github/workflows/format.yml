@@ -30,17 +30,19 @@ jobs:
             git pull origin "${GITHUB_REF#refs/heads/}"
           fi
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
+      # - name: Setup Node
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: "16"
 
-      - name: Clean Install
-        run: |
-          if [ -d "node_modules" ]; then
-            rm -rf node_modules
-          fi
-          npm install
+      # - name: Clean Install
+      #   run: |
+      #     if [ -d "node_modules" ]; then
+      #       rm -rf node_modules
+      #     fi
+      #     npm install
+      - name: Install Prettier
+        run: npm install -g prettier
 
       - name: Apply Prettier Foramtting
         run: npx prettier --write "**/*.java"
