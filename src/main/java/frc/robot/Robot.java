@@ -18,11 +18,11 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.AitanAndJamesAreTheBestForSureAutos.AutoBuilderStuff;
 import frc.robot.AitanAndJamesAreTheBestForSureAutos.AutoCommands;
-import frc.robot.AitanAndJamesAreTheBestForSureAutos.ClimbGoCommand;
-import frc.robot.AitanAndJamesAreTheBestForSureAutos.ClimbPrepCommand;
+// import frc.robot.AitanAndJamesAreTheBestForSureAutos.ClimbGoCommand;
+// import frc.robot.AitanAndJamesAreTheBestForSureAutos.ClimbPrepCommand;
 import frc.robot.Manager.Manager;
 import frc.robot.Manager.ManagerStates;
-import frc.robot.Subsystems.Drive.Drive;
+// import frc.robot.Subsystems.Drive.Drive;
 import frc.robot.Subsystems.Drive.DriveConstants;
 import frc.robot.Subsystems.Drive.DriveStates;
 
@@ -35,7 +35,7 @@ public class Robot extends TimedRobot {
 
 	public static boolean isRedAlliance = false;
 	private final Manager manager = Manager.getInstance();
-	private final Drive drive = Drive.getInstance();
+	// private final Drive drive = Drive.getInstance();
 	private final AutoCommands autoCommands = AutoCommands.getInstance();
 	private SendableChooser<Command> autoChooser;
 
@@ -58,12 +58,12 @@ public class Robot extends TimedRobot {
 		NamedCommands.registerCommand("IDLE", autoCommands.returnToIdle());
 		NamedCommands.registerCommand("WindUp", autoCommands.startWindingUp());
 		NamedCommands.registerCommand("Shoot", autoCommands.shootFuel());
-		NamedCommands.registerCommand("Climb Prep", new ClimbPrepCommand());
-		NamedCommands.registerCommand("Climb", new ClimbGoCommand());
+		// NamedCommands.registerCommand("Climb Prep", new ClimbPrepCommand());
+		// NamedCommands.registerCommand("Climb", new ClimbGoCommand());
 		AutoBuilderStuff.setConfig();
 		autoChooser = AutoBuilder.buildAutoChooser();
 		SmartDashboard.putData("Auto Chooser", autoChooser);
-		drive.zeroGyro();
+		// drive.zeroGyro();
 		SmartDashboard.putNumber("Match Info/Match Number", DriverStation.getMatchNumber());
 		SmartDashboard.putBoolean("Robot State/isEnabled", DriverStation.isEnabled());
 		SmartDashboard.putBoolean("Robot State/isAutonomous", DriverStation.isAutonomous());
@@ -82,7 +82,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotPeriodic() {
 		manager.periodic();
-		drive.periodic();
+		// drive.periodic();
 		CommandScheduler.getInstance().run();
 		SmartDashboard.putNumber("Match Info/Time Left in Match", DriverStation.getMatchTime());
 		if (manager.isIntakeOut()) {
@@ -100,8 +100,8 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void autonomousInit() {
-		drive.zeroGyro();
-		drive.setState(DriveStates.Auto);
+		// drive.zeroGyro();
+		// drive.setState(DriveStates.Auto);
 		Command autoCommand = autoChooser.getSelected();
 		System.out.println("Auto selected: " + autoCommand);
 		if (autoCommand != null) {
@@ -122,7 +122,7 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void teleopInit() {
-		drive.setState(DriveStates.Manual);
+		// drive.setState(DriveStates.Manual);
 		CommandScheduler.getInstance().cancelAll();
 		manager.setState(ManagerStates.IDLE);
 		SmartDashboard.putBoolean("Robot State/isAutonomous", DriverStation.isAutonomous());
@@ -173,7 +173,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void disabledExit() {
 		isRedAlliance = DriverStation.getAlliance().isPresent() && DriverStation.getAlliance().get() == Alliance.Red;
-		drive.setPose(isRedAlliance ? DriveConstants.RED_START : DriveConstants.BLUE_START);
+		// drive.setPose(isRedAlliance ? DriveConstants.RED_START : DriveConstants.BLUE_START);
 	}
 
 	@Override

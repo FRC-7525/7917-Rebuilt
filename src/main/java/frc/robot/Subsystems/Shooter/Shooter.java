@@ -68,9 +68,10 @@ public class Shooter {
 			leaderrightMotor.set(0);
 			//leaderrightMotor.set(IDLE_SPEED_OR_VOLTAGE);
 		} else {
-			leaderrightMotor.setVoltage(
-				motorcontrollerright.calculate(followerleftMotor.getEncoder().getVelocity(), state.getShooterRPS().in(Units.RotationsPerSecond) * RPS_TO_RPM_CONVERSION_FACTOR) + feedforward.calculate(state.getShooterRPS().in(Units.RotationsPerSecond) * RPS_TO_RPM_CONVERSION_FACTOR)
-			);
+			// leaderrightMotor.setVoltage(
+			// 	motorcontrollerright.calculate(followerleftMotor.getEncoder().getVelocity(), state.getShooterRPS().in(Units.RotationsPerSecond) * RPS_TO_RPM_CONVERSION_FACTOR) + feedforward.calculate(state.getShooterRPS().in(Units.RotationsPerSecond) * RPS_TO_RPM_CONVERSION_FACTOR)
+			// );
+            leaderrightMotor.set(1);
 			SmartDashboard.putBoolean("Shooter/On", true);
 		}
 	}

@@ -5,7 +5,7 @@ import static frc.robot.Manager.ManagerStates.*;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.Subsystems.Climber.Climber;
+// import frc.robot.Subsystems.Climber.Climber;
 import frc.robot.Subsystems.Intake.Intake;
 import frc.robot.Subsystems.Passthrough.Passthrough;
 import frc.robot.Subsystems.Shooter.Shooter;
@@ -13,7 +13,7 @@ import org.littletonrobotics.junction.Logger;
 
 public class Manager {
 
-	Climber climber;
+	// Climber climber;
 	Intake intake;
 	Passthrough passthrough;
 	Shooter shooter;
@@ -26,7 +26,7 @@ public class Manager {
 	private static Manager instance;
 
 	private Manager() {
-		climber = Climber.getInstance();
+		// climber = Climber.getInstance();
 		intake = Intake.getInstance();
 		passthrough = Passthrough.getInstance();
 		shooter = Shooter.getInstance();
@@ -50,13 +50,13 @@ public class Manager {
 		// intake.setState(getState().getIntakeState());
 		passthrough.setState(getState().getPassthroughState());
 		shooter.setState(getState().getShooterState());
-		climber.setState(getState().getClimberState());
+		// climber.setState(getState().getClimberState());
 		Logger.recordOutput("Manager State", robotstate.getStateString());
 
 		intake.periodic();
 		passthrough.periodic();
 		shooter.periodic();
-		climber.periodic();
+		// climber.periodic();
 
 		SmartDashboard.putString("Manager State", robotstate.getStateString());
 
@@ -116,23 +116,23 @@ public class Manager {
 					intakeOut = true;
 				}
 				break;
-			case CLIMBIN:
-				intakeOut = true;
-				climber.setSpeed(-0.25);
-				if (operatorController.getLeftTriggerAxis() < 0.1) {
-					robotstate = INIDLE;
-				}
-				break;
-			case CLIMBAUTO:
-				intakeOut = true;
-				break;
-			case CLIMBOUT:
-				intakeOut = true;
-				climber.setSpeed(0.25);
-				if (operatorController.getRightTriggerAxis() < 0.1) {
-					robotstate = INIDLE;
-				}
-				break;
+			// case CLIMBIN:
+			// 	intakeOut = true;
+			// 	climber.setSpeed(-0.25);
+			// 	if (operatorController.getLeftTriggerAxis() < 0.1) {
+			// 		robotstate = INIDLE;
+			// 	}
+			// 	break;
+			// case CLIMBAUTO:
+			// 	intakeOut = true;
+			// 	break;
+			// case CLIMBOUT:
+			// 	intakeOut = true;
+			// 	climber.setSpeed(0.25);
+			// 	if (operatorController.getRightTriggerAxis() < 0.1) {
+			// 		robotstate = INIDLE;
+			// 	}
+			// 	break;
 			default:
 				//robotstate = IDLE;
 				break;
